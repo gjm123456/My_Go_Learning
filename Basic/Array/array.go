@@ -6,7 +6,7 @@ func printArray(arr *[5]int) {
 	arr[0] = 100
 	for i, v := range arr {
 		fmt.Println(i, v)
-	}
+	
 }
 
 func printArray1(arr [5]int) {
