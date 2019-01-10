@@ -18,7 +18,7 @@ func variableZeroValue() {
 	fmt.Printf("%d %q \n", a, s)
 }
 
-func varilableInitialValue() {
+func variableInitialValue() {
 	var a, c int = 3, 4
 	var b = "abc"
 	fmt.Println(a, b, c)
@@ -45,13 +45,48 @@ func triangle() {
 }
 
 func consts() {
+	const (
+		filename = "abc.txt"
+		a, b     = 3, 4 // 常量的数值可以作为各数据类型使用
+	)
+	var c int
+	c = int(math.Sqrt(a*a + b*b))
+	fmt.Println(filename, c)
+}
 
+func enum() {
+	// const (
+	// 	php    = 0
+	// 	python = 1
+	// 	golang = 2
+	// )
+	const (
+		php = iota
+		_
+		python
+		golang
+		java
+	)
+
+	const (
+		b = 1 << (iota)
+		b1
+		b2
+		b3
+		b4
+		b5
+	)
+
+	fmt.Println(php, java, python, golang)
+	fmt.Println(b, b1, b2, b3, b4, b5)
 }
 
 func main() {
 	fmt.Println("Hello World")
 	variableZeroValue()
-	varilableInitialValue()
+	variableInitialValue()
 	variableTypeDeduction()
 	variableShorter()
+	consts()
+	enum()
 }
